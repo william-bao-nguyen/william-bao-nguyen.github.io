@@ -26,7 +26,7 @@
   .nav-links li a { color: var(--white); text-decoration: none; font-size: 0.88rem; font-weight: 400; letter-spacing: 0.03em; opacity: 0.9; transition: opacity 0.2s; cursor: pointer; }
   .nav-links li a:hover { opacity: 1; text-decoration: underline; }
   .nav-dropdown { position: relative; }
-  .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: var(--maroon-dark); min-width: 220px; padding: 6px 0; box-shadow: 0 6px 24px rgba(0,0,0,0.3); margin-top: 8px; }
+  .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: var(--maroon-dark); min-width: 220px; padding: 14px 0 6px; box-shadow: 0 6px 24px rgba(0,0,0,0.3); margin-top: 0; }
   .nav-dropdown:hover .dropdown-menu { display: block; }
   .dropdown-menu a { display: block; padding: 9px 18px; font-size: 0.84rem; color: rgba(255,255,255,0.88) !important; white-space: nowrap; transition: background 0.15s; text-decoration: none !important; opacity: 1 !important; cursor: pointer; }
   .dropdown-menu a:hover { background: rgba(255,255,255,0.12); }
@@ -415,7 +415,7 @@
     <h2 class="section-title" style="margin-bottom:8px;">Blog</h2>
     <hr class="section-rule">
     <div class="blog-index">
-      <div class="blog-card" onclick="showPage('post-dpp')">
+      <div class="blog-card" onclick="showPage('post-dpp')" style="border-top:1px solid #e8e8e8;">
         <img class="blog-thumb" src="assets/images/blog-dpp-poster.png" alt="DPP conference poster">
         <div class="blog-meta">
           <div class="blog-byline">
