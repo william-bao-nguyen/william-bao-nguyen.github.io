@@ -6,122 +6,134 @@
 <meta name="description" content="Personal website of Bao (William) Nguyen, Imperial College London. Features content in plasma physics and high energy density physics.">
 <meta name="google-site-verification" content="KB8P7hB5_hr054TFjm6c9c1x41cF_Q43U4pS4ByNypo">
 <meta property="og:title" content="Bao (William) Nguyen, Imperial College London">
-<meta property="og:description" content="Personal website of Bao (William) Nguyen, Imperial College London. Features content in plasma physics and high energy density physics.">
+<meta property="og:description" content="Personal website of Bao (William) Nguyen, Imperial College London. Plasma physics and high energy density physics.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.william-bao-nguyen.com">
+<meta property="og:url" content="https://williambaonguyen.github.io">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bao (William) Nguyen, Imperial College London">
-<meta name="twitter:description" content="Personal website of Bao (William) Nguyen. Plasma physics and high energy density physics at Imperial College London.">
 <title>Bao (William) Nguyen | Imperial College London</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  :root {
-    --maroon: #6d1a22;
-    --maroon-dark: #521319;
-    --white: #ffffff;
-    --text: #1c1c1c;
-    --muted: #555;
-    --nav-h: 56px;
-  }
+  :root { --maroon: #6d1a22; --maroon-dark: #521319; --white: #ffffff; --text: #1c1c1c; --muted: #555; --nav-h: 56px; }
   body { font-family: 'Jost', sans-serif; background: var(--white); color: var(--text); }
 
   /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-    height: var(--nav-h); background: var(--maroon);
-    display: flex; align-items: center; padding: 0 40px;
-    justify-content: space-between;
-  }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: var(--nav-h); background: var(--maroon); display: flex; align-items: center; padding: 0 40px; justify-content: space-between; }
   .nav-logo { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 0.97rem; color: var(--white); text-decoration: none; letter-spacing: 0.02em; cursor: pointer; }
   .nav-links { display: flex; gap: 38px; list-style: none; }
   .nav-links li a { color: var(--white); text-decoration: none; font-size: 0.88rem; font-weight: 400; letter-spacing: 0.03em; opacity: 0.9; transition: opacity 0.2s; cursor: pointer; }
   .nav-links li a:hover { opacity: 1; text-decoration: underline; }
-
-  /* dropdown */
   .nav-dropdown { position: relative; }
-  .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: var(--maroon-dark); min-width: 210px; padding: 6px 0; box-shadow: 0 6px 24px rgba(0,0,0,0.3); margin-top: 8px; }
+  .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: var(--maroon-dark); min-width: 220px; padding: 6px 0; box-shadow: 0 6px 24px rgba(0,0,0,0.3); margin-top: 8px; }
   .nav-dropdown:hover .dropdown-menu { display: block; }
-  .dropdown-menu a { display: block; padding: 9px 18px; font-size: 0.84rem; color: rgba(255,255,255,0.88) !important; white-space: nowrap; transition: background 0.15s; text-decoration: none !important; opacity: 1 !important; }
+  .dropdown-menu a { display: block; padding: 9px 18px; font-size: 0.84rem; color: rgba(255,255,255,0.88) !important; white-space: nowrap; transition: background 0.15s; text-decoration: none !important; opacity: 1 !important; cursor: pointer; }
   .dropdown-menu a:hover { background: rgba(255,255,255,0.12); }
-
-  /* hamburger */
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
   .hamburger span { width: 22px; height: 2px; background: var(--white); display: block; }
 
-  /* PAGES */
   .page { display: none; }
   .page.active { display: block; }
 
-  /* HERO */
-  .hero {
-    margin-top: var(--nav-h);
-    position: relative; width: 100%; height: 530px;
-    background-image: url('hero.png');
-    background-size: cover; background-position: center 35%;
-    display: flex; align-items: center;
-  }
+  /* HOME */
+  .hero { margin-top: var(--nav-h); position: relative; width: 100%; height: 530px; background-image: url('assets/images/hero.png'); background-size: cover; background-position: center 35%; display: flex; align-items: center; }
   .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.50) 50%, rgba(0,0,0,0.05) 100%); }
   .hero-content { position: relative; z-index: 1; padding: 0 64px; max-width: 680px; }
   .hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5vw, 4rem); font-weight: 700; color: var(--white); line-height: 1.05; margin-bottom: 18px; }
-
-  /* social icons */
   .hero-socials { display: flex; gap: 8px; margin-bottom: 20px; }
   .social-icon { width: 34px; height: 34px; border-radius: 4px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: opacity 0.2s; }
   .social-icon:hover { opacity: 0.8; }
-  .social-icon.scholar  { background: #4285f4; }
-  .social-icon.github   { background: #24292e; }
-  .social-icon.linkedin { background: #0077b5; }
-
+  .social-icon.scholar { background: #4285f4; } .social-icon.github { background: #24292e; } .social-icon.linkedin { background: #0077b5; }
   .hero-bio { color: rgba(255,255,255,0.9); font-size: 0.96rem; line-height: 1.8; font-weight: 300; margin-bottom: 28px; max-width: 540px; }
   .hero-buttons { display: flex; gap: 14px; }
   .btn { padding: 11px 28px; font-family: 'Jost', sans-serif; font-size: 0.86rem; font-weight: 400; letter-spacing: 0.05em; border: 1.5px solid rgba(255,255,255,0.75); background: transparent; color: var(--white); cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s; }
   .btn:hover { background: rgba(255,255,255,0.15); }
-
-  /* CARDS */
   .cards-section { background: var(--white); padding: 60px 40px 72px; }
   .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1080px; margin: 0 auto; }
   .photo-card { text-align: center; }
   .photo-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
-  .photo-caption { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; color: var(--text); margin-top: 16px; letter-spacing: 0.01em; }
+  .photo-caption { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; color: var(--text); margin-top: 16px; }
 
   /* ABOUT */
-  .about-wrap { margin-top: var(--nav-h); max-width: 960px; margin-left: auto; margin-right: auto; padding: 72px 48px; display: grid; grid-template-columns: 250px 1fr; gap: 72px; align-items: start; }
-  .about-sidebar { position: sticky; top: calc(var(--nav-h) + 24px); }
-  .about-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; margin-bottom: 20px; }
-  .about-name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; margin-bottom: 5px; }
-  .about-inst { font-size: 0.82rem; color: var(--muted); line-height: 1.5; margin-bottom: 18px; }
-  .sidebar-links { display: flex; flex-direction: column; gap: 9px; }
-  .sidebar-links a { font-size: 0.83rem; color: var(--maroon); text-decoration: none; display: flex; align-items: center; gap: 5px; }
-  .sidebar-links a::before { content: '↗'; font-size: 0.72rem; }
-  .sidebar-links a:hover { text-decoration: underline; }
-  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; margin-bottom: 22px; }
-  .edu-block { margin-bottom: 20px; }
-  .edu-school { font-weight: 500; font-size: 0.94rem; margin-bottom: 3px; }
-  .edu-degree { font-size: 0.86rem; color: var(--muted); font-style: italic; }
-  .divider { border: none; border-top: 1px solid #e5e5e5; margin: 36px 0; }
-  .research-overview { font-size: 0.93rem; color: var(--muted); line-height: 1.85; }
-  .research-overview p { margin-bottom: 16px; }
-  .research-overview a { color: var(--maroon); text-decoration: none; }
-  .research-overview a:hover { text-decoration: underline; }
+  .about-wrap { margin-top: var(--nav-h); max-width: 1100px; margin-left: auto; margin-right: auto; padding: 60px; display: grid; grid-template-columns: 300px 1fr; gap: 80px; align-items: start; }
+  .about-sidebar { position: sticky; top: calc(var(--nav-h) + 24px); text-align: center; }
+  .about-photo { width: 100%; aspect-ratio: 1/1; object-fit: cover; object-position: center top; margin-bottom: 20px; display: block; }
+  .about-name { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 400; margin-bottom: 18px; }
+  .sidebar-links { display: inline-flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+  .sidebar-links a { font-size: 0.92rem; color: var(--maroon); text-decoration: underline; display: flex; align-items: center; gap: 10px; }
+  .sidebar-links a:hover { opacity: 0.75; }
+  .sidebar-icon { width: 26px; height: 26px; border-radius: 3px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .sidebar-icon.cv { background: #555; } .sidebar-icon.scholar { background: #4285f4; } .sidebar-icon.github { background: #24292e; } .sidebar-icon.linkedin { background: #0077b5; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; margin-bottom: 14px; }
+  .section-rule { border: none; border-top: 1px solid #ccc; margin-bottom: 28px; }
+  .edu-intro { font-size: 1rem; line-height: 1.8; color: var(--text); margin-bottom: 18px; }
+  .edu-list { list-style: disc; padding-left: 28px; font-size: 1rem; line-height: 1.8; }
+  .edu-list li { margin-bottom: 4px; }
+  .edu-sublist { list-style: circle; padding-left: 24px; }
+  .divider { border: none; margin: 40px 0; }
+  .research-overview { font-size: 1rem; color: var(--text); line-height: 1.85; }
+  .research-overview p { margin-bottom: 22px; }
+  .research-overview a { color: var(--text); text-decoration: underline; }
+  .research-overview a:hover { color: var(--maroon); }
 
-  /* RESEARCH */
+  /* RESEARCH HUB */
   .research-wrap { margin-top: var(--nav-h); max-width: 1060px; margin-left: auto; margin-right: auto; padding: 72px 48px; }
   .research-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 28px; margin-top: 36px; }
-  .project-card { border: 1px solid #e8e8e8; overflow: hidden; transition: transform 0.22s, box-shadow 0.22s; text-decoration: none; color: inherit; display: block; }
+  .project-card { border: 1px solid #e8e8e8; overflow: hidden; transition: transform 0.22s, box-shadow 0.22s; color: inherit; display: block; cursor: pointer; }
   .project-card:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(0,0,0,0.09); }
   .project-img { width: 100%; height: 185px; object-fit: cover; display: block; background: #eee; }
   .project-body { padding: 18px 20px 22px; }
   .project-inst { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: var(--maroon); margin-bottom: 7px; }
   .project-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; line-height: 1.3; }
   .project-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
-  .project-link { font-size: 0.78rem; font-weight: 500; color: var(--maroon); }
+  .project-link-label { font-size: 0.78rem; font-weight: 500; color: var(--maroon); }
 
-  /* BLOG */
-  .blog-wrap { margin-top: var(--nav-h); max-width: 700px; margin-left: auto; margin-right: auto; padding: 72px 48px; }
-  .blog-empty { padding: 80px 0; color: var(--muted); font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; text-align: center; }
+  /* PROJECT PAGES */
+  .proj-page { margin-top: var(--nav-h); max-width: 1100px; margin-left: auto; margin-right: auto; padding: 64px 60px 80px; display: grid; grid-template-columns: 1fr 380px; gap: 72px; align-items: start; }
+  .proj-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 400; line-height: 1.15; margin-bottom: 32px; }
+  .proj-body { font-size: 1rem; line-height: 1.85; color: var(--text); }
+  .proj-body p { margin-bottom: 22px; }
+  .proj-body a { color: var(--text); text-decoration: underline; }
+  .proj-body a:hover { color: var(--maroon); }
+  .proj-next { display: inline-block; margin-top: 16px; background: var(--maroon); color: white; padding: 12px 32px; font-size: 0.88rem; letter-spacing: 0.04em; cursor: pointer; border: none; font-family: 'Jost', sans-serif; transition: background 0.2s; }
+  .proj-next:hover { background: var(--maroon-dark); }
+  .proj-right { display: flex; flex-direction: column; gap: 16px; padding-top: 8px; }
+  .proj-right img { width: 100%; display: block; }
+  .proj-caption { font-size: 0.88rem; color: var(--muted); font-style: italic; line-height: 1.5; margin-top: 2px; margin-bottom: 12px; }
+
+  /* BLOG INDEX */
+  .blog-wrap { margin-top: var(--nav-h); max-width: 960px; margin-left: auto; margin-right: auto; padding: 60px 48px; }
+  .blog-index { display: flex; flex-direction: column; gap: 0; }
+  .blog-card { display: grid; grid-template-columns: 420px 1fr; gap: 0; border-bottom: 1px solid #e8e8e8; padding: 36px 0; cursor: pointer; transition: opacity 0.2s; align-items: start; }
+  .blog-card:first-child { border-top: 1px solid #e8e8e8; }
+  .blog-card:hover { opacity: 0.82; }
+  .blog-thumb { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+  .blog-meta { padding: 0 0 0 40px; }
+  .blog-byline { font-size: 0.8rem; color: var(--muted); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .blog-avatar { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
+  .blog-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.65rem; font-weight: 600; line-height: 1.2; margin-bottom: 10px; color: var(--text); }
+  .blog-excerpt { font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+  .blog-stats { font-size: 0.8rem; color: var(--muted); display: flex; gap: 16px; }
+
+  /* BLOG POST */
+  .post-wrap { margin-top: var(--nav-h); max-width: 700px; margin-left: auto; margin-right: auto; padding: 60px 32px 80px; }
+  .post-back { font-size: 0.83rem; color: var(--maroon); cursor: pointer; text-decoration: underline; margin-bottom: 32px; display: inline-block; }
+  .post-back:hover { opacity: 0.75; }
+  .post-byline { display: flex; align-items: center; gap: 10px; font-size: 0.82rem; color: var(--muted); margin-bottom: 8px; }
+  .post-avatar { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; }
+  .post-date { color: var(--muted); }
+  .post-updated { font-size: 0.78rem; color: var(--muted); margin-bottom: 28px; }
+  .post-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 600; line-height: 1.2; margin-bottom: 28px; }
+  .post-body { font-size: 1rem; line-height: 1.85; color: var(--text); }
+  .post-body p { margin-bottom: 20px; }
+  .post-body a { color: var(--text); text-decoration: underline; }
+  .post-img-wrap { margin: 28px 0; text-align: center; }
+  .post-img-wrap img { max-width: 100%; display: inline-block; }
+  .post-img-caption { font-size: 0.82rem; color: var(--muted); margin-top: 8px; font-style: italic; }
+  .post-tags { display: flex; gap: 8px; flex-wrap: wrap; margin: 32px 0 24px; }
+  .post-tag { border: 1px solid #ccc; padding: 4px 12px; font-size: 0.78rem; color: var(--muted); border-radius: 2px; }
+  .post-stats { font-size: 0.82rem; color: var(--muted); display: flex; gap: 16px; padding-top: 16px; border-top: 1px solid #e8e8e8; }
 
   /* FOOTER */
   footer { background: var(--maroon); color: rgba(255,255,255,0.7); text-align: center; padding: 28px 40px; font-size: 0.8rem; letter-spacing: 0.02em; }
@@ -141,9 +153,14 @@
     .cards-grid { grid-template-columns: 1fr; gap: 36px; }
     .about-wrap { grid-template-columns: 1fr; padding: 40px 20px; gap: 36px; }
     .about-sidebar { position: static; }
-    .about-photo { max-width: 180px; }
+    .about-photo { max-width: 240px; margin: 0 auto 20px; }
+    .sidebar-links { margin: 0 auto; }
     .research-wrap { padding: 40px 20px; }
+    .proj-page { grid-template-columns: 1fr; padding: 40px 20px 60px; gap: 40px; }
     .blog-wrap { padding: 40px 20px; }
+    .blog-card { grid-template-columns: 1fr; }
+    .blog-meta { padding: 20px 0 0; }
+    .post-wrap { padding: 40px 20px 60px; }
   }
 </style>
 </head>
@@ -156,12 +173,12 @@
     <li class="nav-dropdown" id="researchDropdown">
       <a onclick="showPage('research')">Research Projects</a>
       <div class="dropdown-menu">
-        <a href="https://www.william-bao-nguyen.com/copy-of-mrs" target="_blank">Realta Fusion</a>
-        <a href="https://www.william-bao-nguyen.com/magneticrecoilspectrometry" target="_blank">MRS</a>
-        <a href="https://www.william-bao-nguyen.com/beam-beam" target="_blank">Beam-Beam</a>
-        <a href="https://www.william-bao-nguyen.com/lwfautomation" target="_blank">LWFA Automation</a>
-        <a href="https://www.william-bao-nguyen.com/copy-of-lwfa-automation" target="_blank">Adaptive Optics</a>
-        <a href="https://www.william-bao-nguyen.com/copy-of-adaptive-optics" target="_blank">Molecular Dynamics</a>
+        <a onclick="showPage('proj-realta')">Realta Fusion</a>
+        <a onclick="showPage('proj-mrs')">MRS</a>
+        <a onclick="showPage('proj-beambeam')">Beam-Beam</a>
+        <a onclick="showPage('proj-lwfa')">LWFA Automation</a>
+        <a onclick="showPage('proj-optics')">Adaptive Optics</a>
+        <a onclick="showPage('proj-moldy')">Molecular Dynamics</a>
       </div>
     </li>
     <li><a onclick="showPage('blog')">Blog</a></li>
@@ -194,21 +211,11 @@
       </div>
     </div>
   </div>
-
   <div class="cards-section">
     <div class="cards-grid">
-      <div class="photo-card">
-        <img src="img1.png" alt="Bao with a laser optics setup — Curious researcher">
-        <p class="photo-caption">Curious researcher</p>
-      </div>
-      <div class="photo-card">
-        <img src="img2.png" alt="Group photo at a physics conference — Team player">
-        <p class="photo-caption">Team player</p>
-      </div>
-      <div class="photo-card">
-        <img src="img3.png" alt="Presenting a research poster — Dedicated student">
-        <p class="photo-caption">Dedicated student</p>
-      </div>
+      <div class="photo-card"><img src="assets/images/img1.png" alt="Curious researcher"><p class="photo-caption">Curious researcher</p></div>
+      <div class="photo-card"><img src="assets/images/img2.png" alt="Team player"><p class="photo-caption">Team player</p></div>
+      <div class="photo-card"><img src="assets/images/img3.png" alt="Dedicated student"><p class="photo-caption">Dedicated student</p></div>
     </div>
   </div>
 </div>
@@ -217,113 +224,279 @@
 <div class="page" id="about">
   <div class="about-wrap">
     <aside class="about-sidebar">
-      <img class="about-photo"
-        src="https://static.wixstatic.com/media/85568f_02eed64f9ca74578845cdb8371236434~mv2.png/v1/fill/w_302,h_393,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screenshot%202025-01-06%20at%2011_42_05%20PM.png"
-        alt="Bao (William) Nguyen">
+      <img class="about-photo" src="assets/images/profile.png" alt="Bao (William) Nguyen">
       <p class="about-name">Bao (William) Nguyen</p>
-      <p class="about-inst">MSci Physics<br>Imperial College London</p>
       <div class="sidebar-links">
-        <a href="https://www.william-bao-nguyen.com/_files/ugd/85568f_c0d6e9fc296746348f10785c18bdcac2.pdf" target="_blank">Current CV</a>
-        <a href="https://scholar.google.com/citations?user=113hVE8AAAAJ&hl=en" target="_blank">Google Scholar</a>
-        <a href="https://github.com/wnguyen1312" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/william-bao-nguyen/" target="_blank">LinkedIn</a>
+        <a href="https://www.william-bao-nguyen.com/_files/ugd/85568f_c0d6e9fc296746348f10785c18bdcac2.pdf" target="_blank">
+          <span class="sidebar-icon cv"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg></span>Current CV
+        </a>
+        <a href="https://scholar.google.com/citations?user=113hVE8AAAAJ&hl=en" target="_blank">
+          <span class="sidebar-icon scholar"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5h3.6v.5C3.6 15.52 7.3 20.3 12 21.93 16.7 20.3 20.4 15.52 20.4 10v-.5H24z"/></svg></span>Google Scholar
+        </a>
+        <a href="https://github.com/wnguyen1312" target="_blank">
+          <span class="sidebar-icon github"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg></span>GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/william-bao-nguyen/" target="_blank">
+          <span class="sidebar-icon linkedin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>Linkedin
+        </a>
       </div>
     </aside>
     <main>
       <section>
         <h2 class="section-title">Education</h2>
-        <div class="edu-block">
-          <p class="edu-school">Imperial College London</p>
-          <p class="edu-degree">MSci Physics</p>
-        </div>
-        <div class="edu-block">
-          <p class="edu-school">Massachusetts Institute of Technology</p>
-          <p class="edu-degree">MISTI Exchange Program</p>
-        </div>
+        <hr class="section-rule">
+        <p class="edu-intro">Bao is currently completing his undergraduate degree at Imperial College London. He also spent an exchange year at MIT. Bao is planning to pursue a Ph.D. in the future.</p>
+        <ul class="edu-list">
+          <li>Imperial College London<ul class="edu-sublist"><li>MSci Physics</li></ul></li>
+          <li>Massachusetts Institute of Technology<ul class="edu-sublist"><li>MISTI Exchange Program</li></ul></li>
+        </ul>
       </section>
-      <hr class="divider">
+      <div class="divider"></div>
       <section>
-        <h2 class="section-title">Research Overview</h2>
+        <h2 class="section-title">Research overview</h2>
+        <hr class="section-rule">
         <div class="research-overview">
-          <p>Bao's journey into plasma physics started at Imperial College London, where he worked on laser wakefield accelerator lab automation under <a href="https://profiles.imperial.ac.uk/z.najmudin" target="_blank">Professor Zulfikar Najmudin</a>. It was here that he was first introduced to different plasma diagnostics and particle-in-cell (PIC) codes, which he later worked on in several other projects.</p>
+          <p>Bao's journey into plasma physics started at Imperial College London, where he worked on laser wakefield accelerator lab automation under <a href="https://profiles.imperial.ac.uk/z.najmudin" target="_blank">Professor Zulfikar Najmudin</a>. It was here that he was first introduced to different plasma diagnostics and particle-in-cell (PIC) codes, which he later worked on in several other projects!</p>
           <p>In the summer of his second year, he did a SULI internship at SLAC National Lab under <a href="https://profiles.stanford.edu/spencer-gessner" target="_blank">Professor Spencer Gessner</a>. He worked on benchmarking the PIC code WarpX for linear collider applications.</p>
-          <p>During his exchange year at MIT, Bao learned more about the milestone ignition achievement at NIF and started to develop an interest in fusion energy. Here, he worked under <a href="https://www.psfc.mit.edu/about/people/faculty/full-name-and-last-name/" target="_blank">Dr. Maria Gatu Johnson</a> at the High Energy Density Physics Division to simulate modulated deuteron spectra observed by the MRS.</p>
-          <p>Last summer, Bao worked at <a href="https://realtafusion.com/" target="_blank">Realta Fusion</a> under Dr. Kai Shih to develop PIC code WarpX for start-to-end simulation of neutral-beam-injection (NBI) devices.</p>
-          <p>Outside of plasma physics, Bao briefly worked on computational chemistry at the University of Medicine &amp; Pharmacy HCMC in Vietnam, running molecular dynamics simulations to evaluate the potential of different molecules in preventing antibiotic resistance in bacteria.</p>
+          <p>During his exchange year at MIT, Bao learned more about the milestone ignition achievement at NIF and started to develop an interest in fusion energy. Here, he worked under <a href="https://www.psfc.mit.edu/about/people/faculty/full-name-and-last-name/" target="_blank">Dr. Maria Gatu Johnson</a> at the High Energy Density Physics Division to simulate modulated deuteron spectra observed by the MRS - one of the group's most important diagnostics.</p>
+          <p>Last summer, Bao worked at <a href="https://realtafusion.com/" target="_blank">Realta Fusion</a> under Dr. Kai Shih to develop PIC code WarpX for start-to-end simulation of neutral-beam-injection (NBI) devices. Outside of plasma physics, Bao briefly worked on computational chemistry at the University of Medicine &amp; Pharmacy HCMC (in Vietnam). Here, he ran molecular dynamics simulation to evaluate the potential of different molecules in preventing antibiotics resistance in different bacteria.</p>
         </div>
       </section>
     </main>
   </div>
 </div>
 
-<!-- RESEARCH -->
+<!-- RESEARCH HUB -->
 <div class="page" id="research">
   <div class="research-wrap">
     <h2 class="section-title">Research Projects</h2>
     <div class="research-grid">
-      <a class="project-card" href="https://www.william-bao-nguyen.com/copy-of-mrs" target="_blank">
-        <img class="project-img" src="https://static.wixstatic.com/media/85568f_368b875704b34134a3e0a1c97ab4454f~mv2.webp/v1/fill/w_690,h_638,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Realta-Fusion-reactor-design.webp" alt="Realta Fusion">
-        <div class="project-body">
-          <p class="project-inst">Realta Fusion</p>
-          <h3 class="project-title">Neutral Beam Injection Simulation with WarpX</h3>
-          <p class="project-desc">Particle-in-cell simulations of neutral beam injection system with WarpX.</p>
-          <span class="project-link">Learn More →</span>
-        </div>
-      </a>
-      <a class="project-card" href="https://www.william-bao-nguyen.com/magneticrecoilspectrometry" target="_blank">
-        <img class="project-img" src="https://static.wixstatic.com/media/85568f_04938a3afb714ae58d9b795b0701eabd~mv2.png/v1/crop/x_24,y_0,w_779,h_720/fill/w_690,h_638,al_c,q_85,enc_avif,quality_auto/Screenshot%202025-09-15%20at%2011_43_35%E2%80%AFPM.png" alt="MRS">
-        <div class="project-body">
-          <p class="project-inst">Massachusetts Institute of Technology</p>
-          <h3 class="project-title">Modulated Deuteron Spectra</h3>
-          <p class="project-desc">Particle-in-cell simulations of modulated deuteron spectra observed by the MRS.</p>
-          <span class="project-link">Learn More →</span>
-        </div>
-      </a>
-      <a class="project-card" href="https://www.william-bao-nguyen.com/beam-beam" target="_blank">
-        <img class="project-img" src="https://static.wixstatic.com/media/3d9cde_854a7583e5ca447e85e10c61440a22ff~mv2.jpeg/v1/fill/w_690,h_638,al_c,q_80,enc_avif,quality_auto/2afd8377-6595-4e30-b2ba-ffb8ea12896b.jpeg" alt="Beam-Beam">
-        <div class="project-body">
-          <p class="project-inst">SLAC National Accelerator Laboratory</p>
-          <h3 class="project-title">Beam-Beam Effects</h3>
-          <p class="project-desc">Beam-beam effects in multi-TeV linear colliders.</p>
-          <span class="project-link">Learn More →</span>
-        </div>
-      </a>
-      <a class="project-card" href="https://www.william-bao-nguyen.com/lwfautomation" target="_blank">
-        <img class="project-img" src="https://static.wixstatic.com/media/85568f_9db0596b82134945a726f28bdf67a490~mv2.jpeg/v1/crop/x_193,y_0,w_1661,h_1536/fill/w_690,h_638,al_c,q_80,enc_avif,quality_auto/dd41b943-171f-439e-876d-92a00824eaff.jpeg" alt="LWFA Automation">
-        <div class="project-body">
-          <p class="project-inst">Imperial College London</p>
-          <h3 class="project-title">Laser Wakefield Accelerator Automation</h3>
-          <p class="project-desc">Developing an automated control system for a laser wakefield accelerator.</p>
-          <span class="project-link">Learn More →</span>
-        </div>
-      </a>
-      <a class="project-card" href="https://www.william-bao-nguyen.com/copy-of-lwfa-automation" target="_blank">
-        <img class="project-img" src="https://static.wixstatic.com/media/3d9cde_1bea9376a1d040fbbe2ce8e5c12003a6~mv2.jpg/v1/crop/x_386,y_0,w_1956,h_1809/fill/w_690,h_638,al_c,q_80,enc_avif,quality_auto/219814286-fde14aa4-b052-422d-815a-0b13db0174c9_edited.jpg" alt="Adaptive Optics">
-        <div class="project-body">
-          <p class="project-inst">Imperial College London</p>
-          <h3 class="project-title">Modelling Adaptive Optics</h3>
-          <p class="project-desc">Geometrical Ray Tracer with Adaptive Optics in Python with Object Oriented Programming.</p>
-          <span class="project-link">Learn More →</span>
-        </div>
-      </a>
-      <a class="project-card" href="https://www.william-bao-nguyen.com/copy-of-adaptive-optics" target="_blank">
-        <img class="project-img" src="https://static.wixstatic.com/media/3d9cde_a96150ff1a3b4703a86f9c9f9183336e~mv2.png/v1/fill/w_690,h_638,al_c,q_85,enc_avif,quality_auto/Screenshot%202024-12-30%20at%208_48_30%20PM.png" alt="Molecular Dynamics">
-        <div class="project-body">
-          <p class="project-inst">University of Medicine &amp; Pharmacy HCMC</p>
-          <h3 class="project-title">Molecular Dynamics Simulation</h3>
-          <p class="project-desc">Evaluating the potential of different molecules for preventing antibiotic resistance in bacteria.</p>
-          <span class="project-link">Learn More →</span>
-        </div>
-      </a>
+      <div class="project-card" onclick="showPage('proj-realta')">
+        <img class="project-img" src="assets/images/proj1-realta.png" alt="Realta Fusion">
+        <div class="project-body"><p class="project-inst">Realta Fusion</p><h3 class="project-title">Neutral Beam Injection Simulation with WarpX</h3><p class="project-desc">Particle-in-cell simulations of neutral beam injection system with WarpX.</p><span class="project-link-label">Learn More →</span></div>
+      </div>
+      <div class="project-card" onclick="showPage('proj-mrs')">
+        <img class="project-img" src="assets/images/proj2-mrs-schematic.png" alt="MRS" style="object-fit:contain;background:#f0f0f0;">
+        <div class="project-body"><p class="project-inst">Massachusetts Institute of Technology</p><h3 class="project-title">Modulated Deuteron Spectra</h3><p class="project-desc">Particle-in-cell simulations of modulated deuteron spectra observed by the MRS.</p><span class="project-link-label">Learn More →</span></div>
+      </div>
+      <div class="project-card" onclick="showPage('proj-beambeam')">
+        <img class="project-img" src="assets/images/proj3-beambeam-diagram.png" alt="Beam-Beam" style="object-fit:contain;background:#f5f5f5;">
+        <div class="project-body"><p class="project-inst">SLAC National Accelerator Laboratory</p><h3 class="project-title">Beam-Beam Effects</h3><p class="project-desc">Beam-beam effects in multi-TeV linear colliders.</p><span class="project-link-label">Learn More →</span></div>
+      </div>
+      <div class="project-card" onclick="showPage('proj-lwfa')">
+        <img class="project-img" src="assets/images/proj4-lwfa-lab.png" alt="LWFA Automation">
+        <div class="project-body"><p class="project-inst">Imperial College London</p><h3 class="project-title">Laser Wakefield Accelerator Automation</h3><p class="project-desc">Developing an automated control system for a laser wakefield accelerator.</p><span class="project-link-label">Learn More →</span></div>
+      </div>
+      <div class="project-card" onclick="showPage('proj-optics')">
+        <img class="project-img" src="assets/images/proj5-optics-scatter.png" alt="Adaptive Optics" style="object-fit:contain;background:#f5f5f5;">
+        <div class="project-body"><p class="project-inst">Imperial College London</p><h3 class="project-title">Modelling Adaptive Optics</h3><p class="project-desc">Geometrical Ray Tracer with Adaptive Optics in Python with Object Oriented Programming.</p><span class="project-link-label">Learn More →</span></div>
+      </div>
+      <div class="project-card" onclick="showPage('proj-moldy')">
+        <img class="project-img" src="assets/images/proj6-moldy.png" alt="Molecular Dynamics">
+        <div class="project-body"><p class="project-inst">University of Medicine &amp; Pharmacy HCMC</p><h3 class="project-title">Molecular Dynamics Simulation</h3><p class="project-desc">Evaluating the potential of different molecules for preventing antibiotic resistance.</p><span class="project-link-label">Learn More →</span></div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- BLOG -->
+<!-- PROJECT: REALTA -->
+<div class="page" id="proj-realta">
+  <div class="proj-page">
+    <div>
+      <h1 class="proj-title">Simulations of neutral beam injection systems with WarpX</h1>
+      <div class="proj-body">
+        <p>Last summer, I interned at Realta Fusion, working under Dr. Kai Shih.</p>
+        <p>I will present this work at APS DPP! More on this soon!</p>
+      </div>
+      <button class="proj-next" onclick="showPage('proj-mrs')">Next Project</button>
+    </div>
+    <div class="proj-right">
+      <img src="assets/images/proj1-realta.png" alt="Magnetic mirror concept at Realta Fusion">
+      <p class="proj-caption"><em>A very nice visualization of the magnetic mirror concept at Realta Fusion.</em></p>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT: MRS -->
+<div class="page" id="proj-mrs">
+  <div class="proj-page">
+    <div>
+      <h1 class="proj-title">Simulations of modulated deuteron spectra observed by the MRS</h1>
+      <div class="proj-body">
+        <p>Outside of my interest in plasma accelerators, I was also intrigued by fusion energy, especially with the famous achievement of ignition at the National Ignition Facility around this time. Therefore in my exchange year at MIT, I worked at the <a href="https://www.psfc.mit.edu/research/topics/high-energy-density-physics" target="_blank">High Energy Density Physics group</a> at the MIT PSFC under the guidance of <a href="https://www.psfc.mit.edu/about/people/faculty/full-name-and-last-name/" target="_blank">Dr. Maria Gatu Johnson</a>. My project involves using the particle-in-cell code EPOCH to investigate the origin of unexpected ion energy modulations observed by the Magnetic Recoil Spectrometer (MRS) at the National Ignition Facility (NIF). This is important because the MRS diagnoses the key implosion parameters at NIF, and modulations can affect these inferred values.</p>
+      </div>
+      <button class="proj-next" onclick="showPage('proj-beambeam')">Next Project</button>
+    </div>
+    <div class="proj-right">
+      <img src="assets/images/proj2-mrs-schematic.png" alt="Schematic of the MRS">
+      <p class="proj-caption">Schematic of the MRS. Picture taken from J.A. Frenje et al., Phys. Plasmas 16, 042704 (2009).</p>
+      <img src="assets/images/proj2-mrs-poster.png" alt="Bao presenting MRS poster">
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT: BEAM-BEAM -->
+<div class="page" id="proj-beambeam">
+  <div class="proj-page">
+    <div>
+      <h1 class="proj-title">Beam-beam effects in linear colliders</h1>
+      <div class="proj-body">
+        <p>In the summer of 2023, I worked as a SULI intern at SLAC National Accelerator Laboratory under the guidance of <a href="https://profiles.stanford.edu/spencer-gessner" target="_blank">Professor Spencer Gessner</a>. As part of the multi-TeV beam-beam working group, I focused on validating and benchmarking quantum physics packages in the particle-in-cell (PIC) code WarpX for linear collider applications. This work addressed critical challenges such as energy losses from quantum effects like beamstrahlung, which can significantly impact collider performance at TeV scales.</p>
+        <p>This was my first experience running large-scale simulations on supercomputers! My findings demonstrated that WarpX's quantum physics packages not only produce results consistent with the established beam-beam code GUINEA-PIG but also scale more efficiently for large-scale problems.</p>
+        <p>(See my <a href="https://accelconf.web.cern.ch/ipac2024/papers/wepr21.pdf" target="_blank">paper</a> here!)</p>
+      </div>
+      <button class="proj-next" onclick="showPage('proj-lwfa')">Next Project</button>
+    </div>
+    <div class="proj-right">
+      <img src="assets/images/proj3-beambeam-diagram.png" alt="Beam-beam collision diagram" style="background:#f5f5f5;padding:8px;">
+      <p class="proj-caption">Illustration of beam-beam collisions and QED effects from my IPAC paper.</p>
+      <img src="assets/images/proj3-beambeam-slac.png" alt="Bao at SLAC">
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT: LWFA -->
+<div class="page" id="proj-lwfa">
+  <div class="proj-page">
+    <div>
+      <h1 class="proj-title">Automation of a laser wakefield accelerator</h1>
+      <div class="proj-body">
+        <p>In the summer of my first year, I read about plasma accelerators and how they accelerate particles over significantly shorter distances compared to conventional accelerators. I reached out to <a href="https://profiles.imperial.ac.uk/z.najmudin" target="_blank">Professor Zulfikar Najmudin</a> in the laser-plasma group at Imperial College London for a summer project. This was my first exposure to plasma physics, and I learned much about what physics research would entail! My project involved creating a control system with Python to automate gas jet experiments and analysis in the lab. Besides my main project, I also worked with another summer intern to model and characterize a pulsed magnet using B dot probes and a Rogwoski coil. Based on these measurements, we proposed an improved design for the magnet to reach the target B-field strength.</p>
+        <p>I very much enjoyed my time with the lab. In my second year, I continued working part-time, assisting with interferometry set-ups, and automating phase-retrieval and tomography codes. It was here that I eventually learned about PIC code (and so it would begin my 'PIC code career' in the next few years)!</p>
+      </div>
+      <button class="proj-next" onclick="showPage('proj-optics')">Next Project</button>
+    </div>
+    <div class="proj-right">
+      <img src="assets/images/proj4-lwfa-lab.png" alt="LWFA lab setup">
+      <img src="assets/images/proj4-lwfa-bao.png" alt="Bao working in the lab">
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT: OPTICS -->
+<div class="page" id="proj-optics">
+  <div class="proj-page">
+    <div>
+      <h1 class="proj-title">Modeling Adaptative Optics with Object Orientated Programming</h1>
+      <div class="proj-body">
+        <p>As part of my studies at Imperial, I worked on an Object Orientated Programming Python project. Given my previous experience with optics and interferometry, I decided to work on a ray tracer project, where I model how a light ray would get travel through different medium depending on their refractive indices and curvatures.</p>
+        <p>As an extension to this project, I implemented 'adaptive optics' / aspheric surfaces to improve the final image quality. This is a technique used in astronomy, which eliminates the blurriness of images.</p>
+        <p>You can find my project's code on <a href="https://github.com/wnguyen1312" target="_blank">GitHub</a> and my report <a href="#" target="_blank">here</a>!</p>
+      </div>
+      <button class="proj-next" onclick="showPage('proj-moldy')">Next Project</button>
+    </div>
+    <div class="proj-right">
+      <img src="assets/images/proj5-optics-scatter.png" alt="RMS spot size vs beam diameter">
+      <img src="assets/images/proj5-optics-bar.png" alt="RMS spot size by lens type">
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT: MOLDY -->
+<div class="page" id="proj-moldy">
+  <div class="proj-page">
+    <div>
+      <h1 class="proj-title">Molecular Dynamics Simulations</h1>
+      <div class="proj-body">
+        <p>At the University of Medicine &amp; Pharmacy HCMC in Vietnam, I worked on a computational chemistry project under Professor Khac-Thai Minh. Efflux pump is a protein complex that allows bacteria to remove toxins, which can contribute to dangerous antibiotic resistance. My project involved using Molecular Dynamics simulation (GROMACs) to study different molecules that can act as inhibitors to a particular efflux pump in certain bacteria. Personally, this was a very interesting cross-disciplinary experience and it was also one of my first exposures to computational research!</p>
+        <p>You can find the link to my co-authored papers <a href="#" target="_blank">here</a> and <a href="#" target="_blank">here</a>!</p>
+      </div>
+      <button class="proj-next" onclick="showPage('proj-realta')">Next Project</button>
+    </div>
+    <div class="proj-right">
+      <img src="assets/images/proj6-moldy.png" alt="Molecular dynamics simulation figures">
+    </div>
+  </div>
+</div>
+
+<!-- BLOG INDEX -->
 <div class="page" id="blog">
   <div class="blog-wrap">
-    <h2 class="section-title">Blog</h2>
-    <p class="blog-empty">Posts coming soon.</p>
+    <h2 class="section-title" style="margin-bottom:8px;">Blog</h2>
+    <hr class="section-rule">
+    <div class="blog-index">
+      <div class="blog-card" onclick="showPage('post-dpp')">
+        <img class="blog-thumb" src="assets/images/blog-dpp-poster.png" alt="DPP conference poster">
+        <div class="blog-meta">
+          <div class="blog-byline">
+            <img class="blog-avatar" src="assets/images/profile.png" alt="Bao Nguyen">
+            <span>Bao Nguyen &nbsp;·&nbsp; Oct 11, 2024 &nbsp;·&nbsp; 1 min read</span>
+          </div>
+          <h3 class="blog-card-title">My very first DPP experience</h3>
+          <p class="blog-excerpt">This past week, I attended my first APS Division of Plasma Physics (DPP) conference in Atlanta, and it was an unforgettable experience....</p>
+          <div class="blog-stats"><span>26 views</span><span>0 comments</span></div>
+        </div>
+      </div>
+      <div class="blog-card" onclick="showPage('post-ipac')">
+        <img class="blog-thumb" src="assets/images/blog-ipac-poster.png" alt="IPAC24 Nashville">
+        <div class="blog-meta">
+          <div class="blog-byline">
+            <img class="blog-avatar" src="assets/images/profile.png" alt="Bao Nguyen">
+            <span>Bao Nguyen &nbsp;·&nbsp; May 26, 2024 &nbsp;·&nbsp; 1 min read</span>
+          </div>
+          <h3 class="blog-card-title">IPAC'24 in Nashville</h3>
+          <p class="blog-excerpt">I recently had the chance to present my work on benchmarking the beam-beam modules in WarpX at the 15th International Particle...</p>
+          <div class="blog-stats"><span>5 views</span><span>0 comments</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POST: DPP -->
+<div class="page" id="post-dpp">
+  <div class="post-wrap">
+    <a class="post-back" onclick="showPage('blog')">← All Posts</a>
+    <div class="post-byline">
+      <img class="post-avatar" src="assets/images/profile.png" alt="Bao Nguyen">
+      <span><strong>Bao Nguyen</strong></span>
+      <span class="post-date">· Oct 11, 2024 · 1 min read</span>
+    </div>
+    <p class="post-updated">Updated: Dec 29, 2024</p>
+    <h1 class="post-title">My very first DPP experience</h1>
+    <div class="post-body">
+      <p>This past week, I attended my first APS Division of Plasma Physics (DPP) conference in Atlanta, and it was an unforgettable experience. As the largest plasma physics conference in the U.S., it brought together an incredible community of researchers, students, and professionals.</p>
+      <p>This year, I presented a poster on my work exploring modulated deuteron spectra observed by the Magnetic Recoil Spectrometer (MRS). I had many positive interactions, with discussions sparking new ideas and directions for my work. It was also exciting to finally meet several collaborators in person after months of remote communication.</p>
+      <div class="post-img-wrap">
+        <img src="assets/images/blog-dpp-poster.png" alt="Bao at the DPP poster session">
+        <p class="post-img-caption">A photo of me at the poster session</p>
+      </div>
+      <p>Beyond my poster session, I thoroughly enjoyed the talks on fundamental plasma physics and the progress being made toward inertial fusion energy. These sessions provided fresh insights and helped contextualize the significance of our collective efforts in the field.</p>
+      <p>Overall, it was a very positive experience at DPP this year and I am already looking forward to next year (hopefully giving a talk when my work is more complete!).</p>
+    </div>
+    <div class="post-tags">
+      <span class="post-tag">Conference</span>
+      <span class="post-tag">Research</span>
+      <span class="post-tag">High Energy Density Physics</span>
+    </div>
+    <div class="post-stats"><span>27 views</span><span>0 comments</span></div>
+  </div>
+</div>
+
+<!-- POST: IPAC -->
+<div class="page" id="post-ipac">
+  <div class="post-wrap">
+    <a class="post-back" onclick="showPage('blog')">← All Posts</a>
+    <div class="post-byline">
+      <img class="post-avatar" src="assets/images/profile.png" alt="Bao Nguyen">
+      <span><strong>Bao Nguyen</strong></span>
+      <span class="post-date">· May 26, 2024 · 1 min read</span>
+    </div>
+    <p class="post-updated">Updated: Dec 30, 2024</p>
+    <h1 class="post-title">IPAC'24 in Nashville</h1>
+    <div class="post-body">
+      <p>I recently had the chance to present my work on benchmarking the beam-beam modules in WarpX at the 15th International Particle Accelerator Conference in Nashville. This included a conference proceeding and a poster presentation.</p>
+      <p>The conference itself was an incredible experience, bringing together scientists from all across the globe. A personal highlight for me was talking with WarpX developers and re-connecting with fellow FACET-II summer interns from SLAC.</p>
+      <div class="post-img-wrap">
+        <img src="assets/images/blog-ipac-poster.png" alt="Bao presenting at IPAC24">
+      </div>
+    </div>
+    <div class="post-tags">
+      <span class="post-tag">Conference</span>
+      <span class="post-tag">Research</span>
+      <span class="post-tag">Accelerator Physics</span>
+    </div>
+    <div class="post-stats"><span>6 views</span><span>0 comments</span></div>
   </div>
 </div>
 
