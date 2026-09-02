@@ -11,3 +11,16 @@ footer{background:var(--red);color:#fff}.footer-inner{min-height:82px;display:fl
 @media(max-width:850px){.project-grid{grid-template-columns:1fr 1fr}.about-layout,.project-layout{grid-template-columns:1fr;gap:2.5rem}.profile-panel{position:static;max-width:300px}.project-sidebar{grid-template-columns:1fr 1fr}.post-card{grid-template-columns:260px 1fr}}
 @media(max-width:680px){.shell{width:min(var(--max),calc(100% - 2rem))}.menu-button{display:block;padding:.5rem}.site-menu{display:none;position:absolute;top:var(--nav-h);left:0;right:0;height:auto;flex-direction:column;align-items:stretch;gap:0;padding:.7rem 1rem 1rem;background:var(--red-dark)}.site-menu.open{display:flex}.site-menu>li{height:auto;display:block}.site-menu>li>a{display:inline-block;padding:.6rem}.has-submenu{position:relative}.submenu-button{display:inline-block;padding:.6rem;font-size:1rem}.submenu{display:none;visibility:visible;position:static;min-width:0;padding:0 0 .4rem 1rem;box-shadow:none;opacity:1;transform:none;background:transparent}.submenu.open{display:block}.has-submenu:hover .submenu,.has-submenu:focus-within .submenu{transform:none}.home-hero,.hero-content{min-height:500px}.hero-overlay{background:rgba(0,0,0,.63)}.home-cards,.project-grid{grid-template-columns:1fr}.page-hero{padding-block:3.2rem 2.5rem}.section{padding-block:3.5rem}.project-sidebar{grid-template-columns:1fr}.post-card{grid-template-columns:1fr;gap:1rem}.footer-inner{align-items:flex-start;flex-direction:column;justify-content:center;padding-block:1.2rem}.footer-inner div{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms!important}}
+
+/* Original-site scale and rhythm */
+.home-hero,.hero-content{min-height:530px}
+.hero-overlay{background:linear-gradient(90deg,rgba(0,0,0,.75),rgba(0,0,0,.5) 50%,rgba(0,0,0,.05))}
+.hero-content h1{font-size:clamp(2.8rem,5vw,4rem);line-height:1.05;font-weight:700;letter-spacing:0}
+.hero-socials{display:flex;gap:.5rem;margin-top:1rem}
+.hero-socials a{padding:.25rem .5rem;border:1px solid rgba(255,255,255,.65);color:#fff;text-decoration:none;font-size:.74rem}
+.hero-socials a:hover{background:#fff;color:var(--red)}
+.hero-bio{max-width:540px;margin-top:1.15rem;font-size:.96rem;line-height:1.8}
+.section{padding-block:4rem 5rem}
+.section-title{margin:0 0 2rem;padding-bottom:.65rem;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:2rem;font-weight:400;line-height:1.2}
+.project-copy h1{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:400;line-height:1.15}
+.post-layout h1{font-size:clamp(1.9rem,4vw,2.5rem);font-weight:600;line-height:1.2}
