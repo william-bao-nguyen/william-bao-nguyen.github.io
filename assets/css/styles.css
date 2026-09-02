@@ -32,6 +32,11 @@ body{font-size:17px;font-weight:400}
 .home-hero,.hero-content{min-height:490px}
 .hero-bio{font-size:1.04rem;font-weight:400;line-height:1.72}
 .home-cards{padding-top:.75rem;padding-bottom:3.5rem}
+
+/* Keep typography consistent across every page. */
+:root{--serif:Calibri,"Helvetica Neue",Arial,sans-serif;--sans:Calibri,"Helvetica Neue",Arial,sans-serif}
+body{font-family:Calibri,"Helvetica Neue",Arial,sans-serif}
+.hero-bio{font-size:1.18rem;line-height:1.62}
 .hero-socials{gap:.65rem}
 .hero-socials a{display:inline-flex;padding:0;border:0;background:transparent}
 .hero-socials a:hover{background:transparent;opacity:.78}
