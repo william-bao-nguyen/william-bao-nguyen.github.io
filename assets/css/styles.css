@@ -24,3 +24,5 @@ footer{background:var(--red);color:#fff}.footer-inner{min-height:82px;display:fl
 .section-title{margin:0 0 2rem;padding-bottom:.65rem;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:2rem;font-weight:400;line-height:1.2}
 .project-copy h1{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:400;line-height:1.15}
 .post-layout h1{font-size:clamp(1.9rem,4vw,2.5rem);font-weight:600;line-height:1.2}
+.profile-panel img{height:auto;aspect-ratio:auto;object-fit:contain;object-position:center}
+.content-block h2,.section-title{border-bottom-width:2px;border-bottom-color:#c9c5c2}
