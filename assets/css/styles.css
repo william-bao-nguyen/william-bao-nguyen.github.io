@@ -120,3 +120,22 @@ body{font-family:Calibri,"Helvetica Neue",Arial,sans-serif}
 @media(max-width:340px){
   .profile-links{grid-template-columns:1fr}
 }
+
+
+/* Mobile homepage: quieter image treatment and a more compact first screen. */
+@media(max-width:680px){
+  .home-hero{background-position:58% center}
+  .hero-overlay{background:rgba(0,0,0,.78)}
+  .hero-content{min-height:0;padding-block:2.4rem 2.7rem}
+  .hero-content h1{max-width:330px;font-size:2.25rem;line-height:1.02}
+  .hero-socials{gap:.55rem;margin-top:.75rem}
+  .hero-socials img{width:25px;height:25px}
+  .hero-bio{margin-top:.9rem;font-size:.98rem;line-height:1.48}
+  .button-row{display:grid;grid-template-columns:1fr 1fr;width:min(100%,330px);gap:.6rem;margin-top:1.15rem}
+  .button-row .button{min-height:44px;padding:.55rem .75rem;font-size:.9rem}
+  .button-row .button:last-child{grid-column:1/-1}
+}
+@media(max-width:390px){
+  .hero-content{min-height:0}
+  .hero-content h1{font-size:2.05rem}
+}
