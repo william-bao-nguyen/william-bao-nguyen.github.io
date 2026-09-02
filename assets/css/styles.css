@@ -87,7 +87,9 @@ body{font-family:Calibri,"Helvetica Neue",Arial,sans-serif}
   .about-layout{gap:2.25rem}
   .profile-panel{max-width:none}
   .profile-panel img{width:min(100%,360px);margin-inline:auto}
-  .profile-links{gap:.75rem 1rem}
+  .profile-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;width:min(100%,360px);margin-inline:auto}
+  .profile-links a{justify-content:flex-start;min-width:0;padding:.6rem .7rem;font-size:1rem;line-height:1.2;white-space:nowrap}
+  .profile-links img{flex:0 0 20px}
   .content-block+.content-block{margin-top:2.4rem}
   .content-block h2{font-size:1.65rem}
   .project-grid{gap:1.25rem}
@@ -113,4 +115,8 @@ body{font-family:Calibri,"Helvetica Neue",Arial,sans-serif}
   .hero-content h1{font-size:2.25rem}
   .button-row{display:grid;grid-template-columns:1fr 1fr;width:100%}
   .button-row .button:last-child{grid-column:1/-1}
+}
+
+@media(max-width:340px){
+  .profile-links{grid-template-columns:1fr}
 }
