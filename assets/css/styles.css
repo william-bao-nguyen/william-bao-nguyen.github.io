@@ -51,3 +51,12 @@ body{font-family:Calibri,"Helvetica Neue",Arial,sans-serif}
 .footer-socials img{width:21px;height:21px;filter:brightness(0) invert(1);opacity:.9}
 .publication-links{margin:0 0 1.4rem;padding-left:1.25rem}
 .publication-links li{margin-bottom:.65rem}
+
+/* Burgundy section rules and Pacific Fusion project media. */
+:root{--section-rule:#8a343c}
+.content-block h2,.section-title{border-bottom:3px solid var(--section-rule)}
+.project-nav{border-top:3px solid var(--section-rule)}
+.post-card{border-top-color:var(--section-rule);border-top-width:2px}
+.post-card:last-child{border-bottom-color:var(--section-rule);border-bottom-width:2px}
+.pf-figure img{width:100%;height:auto;background:var(--off)}
+.private-note{color:var(--muted);font-style:italic}
