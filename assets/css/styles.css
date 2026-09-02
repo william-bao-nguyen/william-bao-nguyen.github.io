@@ -60,6 +60,7 @@ body{font-family:Calibri,"Helvetica Neue",Arial,sans-serif}
 .post-card,.post-card:last-child{padding:0;border:0}
 .pf-figure img{width:100%;height:auto;background:var(--off)}
 .private-note{color:var(--muted);font-style:italic}
+.home-hero,.home-cards{overflow-anchor:none}
 
 /* Responsive layout: preserve desktop styling and adapt below phone widths. */
 @media(max-width:680px){
