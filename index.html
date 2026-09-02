@@ -3,311 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="William Bao Nguyen — computational plasma physics, fusion energy, scientific computing, and diagnostics.">
-  <meta name="theme-color" content="#651d2a">
-  <title>William Bao Nguyen</title>
+  <meta name="description" content="Personal website of William (Bao) Nguyen, a computational plasma physicist working in fusion energy and scientific computing.">
+  <title>William (Bao) Nguyen</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --maroon: #651d2a;
-      --maroon-dark: #45111b;
-      --maroon-soft: #f3e9eb;
-      --paper: #fbfaf8;
-      --white: #fff;
-      --ink: #191716;
-      --muted: #68615e;
-      --line: #ded8d4;
-      --serif: "Fraunces", Georgia, serif;
-      --sans: "DM Sans", system-ui, sans-serif;
-      --max: 1180px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); font-size: 16px; line-height: 1.65; }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; }
-    button { font: inherit; }
-    .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 999; padding: .7rem 1rem; background: var(--white); color: var(--maroon); }
-    .skip-link:focus { top: 1rem; }
-
-    .site-header { position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,.16); background: rgba(101,29,42,.96); color: var(--white); backdrop-filter: blur(14px); }
-    .nav { width: min(var(--max), calc(100% - 3rem)); min-height: 66px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-    .brand { font-family: var(--serif); font-size: 1.08rem; font-weight: 600; text-decoration: none; letter-spacing: .01em; }
-    .nav-links { display: flex; align-items: center; gap: 1.8rem; margin: 0; padding: 0; list-style: none; }
-    .nav-links a { text-decoration: none; font-size: .9rem; opacity: .86; }
-    .nav-links a:hover, .nav-links a:focus-visible { opacity: 1; }
-    .nav-toggle { display: none; border: 0; color: var(--white); background: transparent; padding: .45rem; cursor: pointer; }
-    .nav-toggle svg { width: 25px; height: 25px; }
-
-    .hero { color: var(--white); background: var(--maroon); overflow: hidden; }
-    .hero-grid { width: min(var(--max), calc(100% - 3rem)); min-height: 660px; margin: auto; display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: clamp(3rem, 7vw, 7rem); padding: 5rem 0; }
-    .eyebrow { margin: 0 0 1rem; font-size: .78rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
-    .hero h1 { max-width: 680px; margin: 0; font-family: var(--serif); font-size: clamp(3.4rem, 7vw, 6.5rem); font-weight: 500; line-height: .97; letter-spacing: -.04em; }
-    .hero-intro { max-width: 650px; margin: 1.8rem 0 0; color: rgba(255,255,255,.84); font-size: clamp(1.05rem, 1.8vw, 1.28rem); line-height: 1.65; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
-    .button { display: inline-flex; align-items: center; justify-content: center; gap: .45rem; min-height: 46px; padding: .7rem 1.1rem; border: 1px solid rgba(255,255,255,.46); text-decoration: none; font-size: .9rem; font-weight: 600; transition: transform .2s, background .2s, color .2s; }
-    .button:hover { transform: translateY(-2px); background: var(--white); color: var(--maroon); }
-    .button.primary { border-color: var(--white); background: var(--white); color: var(--maroon); }
-    .button.primary:hover { background: transparent; color: var(--white); }
-    .hero-portrait { position: relative; justify-self: end; width: min(100%, 440px); }
-    .hero-portrait::before { content: ""; position: absolute; inset: -18px 18px 18px -18px; border: 1px solid rgba(255,255,255,.35); }
-    .hero-portrait img { position: relative; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; filter: saturate(.88); }
-    .hero-caption { position: relative; display: flex; justify-content: space-between; gap: 1rem; margin-top: .9rem; color: rgba(255,255,255,.72); font-size: .78rem; }
-
-    .signal { border-bottom: 1px solid var(--line); background: var(--white); }
-    .signal-grid { width: min(var(--max), calc(100% - 3rem)); margin: auto; display: grid; grid-template-columns: repeat(3, 1fr); }
-    .signal-item { padding: 1.5rem 2rem; border-left: 1px solid var(--line); }
-    .signal-item:last-child { border-right: 1px solid var(--line); }
-    .signal-label { display: block; color: var(--maroon); font-size: .72rem; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
-    .signal-value { display: block; margin-top: .25rem; font-family: var(--serif); font-size: 1.12rem; }
-
-    .section { width: min(var(--max), calc(100% - 3rem)); margin: auto; padding: 7rem 0; }
-    .section-head { display: grid; grid-template-columns: .72fr 1.28fr; gap: 4rem; align-items: end; margin-bottom: 3rem; }
-    .kicker { margin: 0 0 .55rem; color: var(--maroon); font-size: .75rem; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
-    h2 { margin: 0; font-family: var(--serif); font-size: clamp(2.25rem, 4vw, 3.7rem); font-weight: 500; line-height: 1.08; letter-spacing: -.025em; }
-    .section-lede { max-width: 680px; margin: 0; color: var(--muted); font-size: 1.04rem; }
-
-    .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.35rem; }
-    .project { min-width: 0; border: 1px solid var(--line); background: var(--white); }
-    .project.large { grid-column: 1 / -1; display: grid; grid-template-columns: 1.15fr .85fr; }
-    .project-media { min-height: 270px; overflow: hidden; background: #eee9e7; }
-    .project.large .project-media { min-height: 410px; }
-    .project-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
-    .project:hover .project-media img { transform: scale(1.025); }
-    .project-copy { padding: 2rem; }
-    .project-meta { display: flex; flex-wrap: wrap; gap: .55rem; margin-bottom: 1.2rem; color: var(--maroon); font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
-    .project h3 { margin: 0 0 .8rem; font-family: var(--serif); font-size: clamp(1.55rem, 3vw, 2.35rem); font-weight: 500; line-height: 1.18; }
-    .project p { margin: 0; color: var(--muted); }
-    .tags { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1.3rem; }
-    .tag { padding: .3rem .55rem; border: 1px solid var(--line); color: var(--muted); font-size: .72rem; }
-
-    .work-band { color: var(--white); background: var(--maroon-dark); }
-    .work-band .section { padding-top: 6.5rem; padding-bottom: 6.5rem; }
-    .work-band .kicker { color: #e8b8c0; }
-    .work-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: 5rem; }
-    .work-intro p { color: rgba(255,255,255,.7); }
-    .timeline { border-top: 1px solid rgba(255,255,255,.2); }
-    .timeline-item { display: grid; grid-template-columns: 110px 1fr; gap: 1.4rem; padding: 1.45rem 0; border-bottom: 1px solid rgba(255,255,255,.2); }
-    .timeline-date { color: #e8b8c0; font-size: .78rem; font-weight: 600; }
-    .timeline-item h3 { margin: 0 0 .28rem; font-family: var(--serif); font-size: 1.28rem; font-weight: 500; }
-    .timeline-item p { margin: 0; color: rgba(255,255,255,.67); font-size: .9rem; }
-
-    .software-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .software-card { display: flex; min-height: 250px; flex-direction: column; padding: 1.65rem; border: 1px solid var(--line); background: var(--white); }
-    .software-mark { width: 42px; height: 42px; display: grid; place-items: center; margin-bottom: 2rem; color: var(--white); background: var(--maroon); font-family: var(--serif); font-size: 1.2rem; }
-    .software-card h3 { margin: 0 0 .6rem; font-family: var(--serif); font-size: 1.35rem; font-weight: 500; }
-    .software-card p { margin: 0; color: var(--muted); font-size: .9rem; }
-    .software-card a { margin-top: auto; padding-top: 1.4rem; color: var(--maroon); font-size: .85rem; font-weight: 600; text-underline-offset: .2rem; }
-
-    .about { display: grid; grid-template-columns: .72fr 1.28fr; gap: 5rem; align-items: start; }
-    .about-photo { position: sticky; top: 100px; }
-    .about-photo img { width: 100%; aspect-ratio: 1 / 1.14; object-fit: cover; object-position: center top; }
-    .about-copy .large-copy { margin: 0 0 2rem; font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.5rem); line-height: 1.35; }
-    .about-copy p { color: var(--muted); }
-    .link-row { display: flex; flex-wrap: wrap; gap: 1.3rem; margin-top: 2rem; }
-    .text-link { color: var(--maroon); font-weight: 600; text-underline-offset: .25rem; }
-
-    .notes-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .note { display: grid; grid-template-columns: 150px 1fr; gap: 1.2rem; padding: 1rem 0; border-top: 1px solid var(--line); text-decoration: none; }
-    .note img { width: 150px; aspect-ratio: 16 / 10; object-fit: cover; }
-    .note time { color: var(--maroon); font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
-    .note h3 { margin: .25rem 0 0; font-family: var(--serif); font-size: 1.25rem; font-weight: 500; line-height: 1.25; }
-
-    footer { color: var(--white); background: var(--maroon); }
-    .footer-inner { width: min(var(--max), calc(100% - 3rem)); margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 2rem 0; }
-    .footer-inner p { margin: 0; font-size: .82rem; color: rgba(255,255,255,.7); }
-    .footer-links { display: flex; gap: 1rem; }
-    .footer-links a { font-size: .82rem; }
-
-    @media (max-width: 900px) {
-      .hero-grid { min-height: auto; grid-template-columns: 1fr; }
-      .hero-portrait { justify-self: start; width: min(75vw, 420px); }
-      .section-head, .work-grid, .about { grid-template-columns: 1fr; gap: 2rem; }
-      .project.large { grid-template-columns: 1fr; }
-      .software-grid { grid-template-columns: 1fr 1fr; }
-      .about-photo { position: static; max-width: 430px; }
-      .notes-list { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 650px) {
-      .nav { width: min(100% - 2rem, var(--max)); }
-      .nav-toggle { display: block; }
-      .nav-links { display: none; position: absolute; top: 66px; left: 0; right: 0; flex-direction: column; align-items: flex-start; gap: 0; padding: .8rem 1rem 1rem; background: var(--maroon-dark); }
-      .nav-links.open { display: flex; }
-      .nav-links a { display: block; width: 100%; padding: .7rem; }
-      .hero-grid, .section, .signal-grid, .footer-inner { width: min(100% - 2rem, var(--max)); }
-      .hero-grid { padding: 4rem 0; gap: 3rem; }
-      .hero h1 { font-size: clamp(3rem, 16vw, 4.4rem); }
-      .hero-portrait { width: 100%; }
-      .signal-grid { grid-template-columns: 1fr; }
-      .signal-item { padding: 1rem 0; border-left: 0; border-bottom: 1px solid var(--line); }
-      .signal-item:last-child { border-right: 0; border-bottom: 0; }
-      .section { padding: 5rem 0; }
-      .featured-grid, .software-grid { grid-template-columns: 1fr; }
-      .project.large { grid-column: auto; }
-      .project.large .project-media, .project-media { min-height: 240px; }
-      .timeline-item { grid-template-columns: 1fr; gap: .35rem; }
-      .note { grid-template-columns: 110px 1fr; }
-      .note img { width: 110px; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="#top">William Bao Nguyen</a>
-      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#research">Research</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#software">Software</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#notes">Notes</a></li>
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="index.html">William (Bao) Nguyen</a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+      <ul class="site-menu" id="site-menu">
+        <li><a href="about/">About me</a></li>
+        <li class="has-submenu"><a href="research/">Research Projects</a><button class="submenu-button" type="button" aria-label="Show research projects" aria-expanded="false">⌄</button>
+          <ul class="submenu">
+            <li><a href="research/realta/">Realta Fusion</a></li><li><a href="research/mrs/">MRS</a></li><li><a href="research/beam-beam/">Beam–Beam</a></li><li><a href="research/lwfa/">LWFA Automation</a></li><li><a href="research/adaptive-optics/">Adaptive Optics</a></li><li><a href="research/molecular-dynamics/">Molecular Dynamics</a></li>
+          </ul>
+        </li>
+        <li><a href="blog/">Blog</a></li>
       </ul>
     </nav>
   </header>
-
   <main id="main">
-    <section class="hero" id="top">
-      <div class="hero-grid">
-        <div>
-          <p class="eyebrow">Plasma physics · Fusion energy · Scientific computing</p>
-          <h1>William Bao Nguyen</h1>
-          <p class="hero-intro">I develop computational tools and simulations for plasma physics, fusion experiments, and particle-beam systems. I am beginning my PhD in Mechanical Engineering at Stanford University in Fall 2026.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="#research">Explore my research</a>
-            <a class="button" href="https://scholar.google.com/citations?user=113hVE8AAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar ↗</a>
-          </div>
-        </div>
-        <figure class="hero-portrait">
-          <img src="assets/images/profile.png" alt="Portrait of William Bao Nguyen">
-          <figcaption class="hero-caption"><span>Computational plasma physicist</span><span>Palo Alto, California</span></figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <div class="signal" aria-label="Current research profile">
-      <div class="signal-grid">
-        <div class="signal-item"><span class="signal-label">Current</span><span class="signal-value">Stanford University</span></div>
-        <div class="signal-item"><span class="signal-label">Focus</span><span class="signal-value">Fusion &amp; plasma simulation</span></div>
-        <div class="signal-item"><span class="signal-label">Methods</span><span class="signal-value">PIC · inference · JAX</span></div>
-      </div>
-    </div>
-
-    <section class="section" id="research">
-      <div class="section-head">
-        <div><p class="kicker">Selected research</p><h2>Physics through computation</h2></div>
-        <p class="section-lede">My work spans synthetic diagnostics for fusion experiments, high-performance particle-in-cell simulation, and computational accelerator physics.</p>
-      </div>
-      <div class="featured-grid">
-        <article class="project large">
-          <div class="project-media"><img src="assets/images/proj2-mrs-schematic.png" alt="Magnetic Recoil Spectrometer schematic"></div>
-          <div class="project-copy">
-            <div class="project-meta"><span>MIT PSFC</span><span>·</span><span>Fusion diagnostics</span></div>
-            <h3>Magnetic Recoil Spectrometer</h3>
-            <p>Modeling the physical origin of ion-energy modulations observed by the MRS at the National Ignition Facility, and developing differentiable tools for synthetic spectrum generation and parameter inference.</p>
-            <div class="tags"><span class="tag">EPOCH</span><span class="tag">JAX</span><span class="tag">Bayesian inference</span></div>
-          </div>
-        </article>
-        <article class="project">
-          <div class="project-media"><img src="assets/images/proj1-realta.png" alt="Magnetic-mirror plasma visualization"></div>
-          <div class="project-copy">
-            <div class="project-meta"><span>Realta Fusion</span><span>2025</span></div>
-            <h3>Neutral beam injection with WarpX</h3>
-            <p>Developed start-to-end particle-in-cell workflows for neutral-beam injection and benchmarked simulation results against established models.</p>
-            <div class="tags"><span class="tag">WarpX</span><span class="tag">HPC</span><span class="tag">PIC</span></div>
-          </div>
-        </article>
-        <article class="project">
-          <div class="project-media"><img src="assets/images/proj3-beambeam-diagram.png" alt="Diagram of beam-beam effects in a linear collider"></div>
-          <div class="project-copy">
-            <div class="project-meta"><span>SLAC</span><span>2023</span></div>
-            <h3>Beam–beam effects in linear colliders</h3>
-            <p>Validated WarpX quantum-physics models for multi-TeV collider simulations and benchmarked them against GUINEA-PIG.</p>
-            <div class="tags"><span class="tag">Beam physics</span><span class="tag">QED</span><span class="tag">WarpX</span></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="work-band" id="experience">
-      <div class="section work-grid">
-        <div class="work-intro"><p class="kicker">Experience</p><h2>A path toward fusion energy</h2><p>Across national laboratories, universities, and fusion companies, I have focused on computational methods that connect physical models to experiments.</p></div>
-        <div class="timeline">
-          <article class="timeline-item"><span class="timeline-date">2026—</span><div><h3>Stanford University</h3><p>PhD student, Mechanical Engineering</p></div></article>
-          <article class="timeline-item"><span class="timeline-date">Summer 2026</span><div><h3>Pacific Fusion</h3><p>Simulation &amp; Synthetic Diagnostics Intern, Experiment Division</p></div></article>
-          <article class="timeline-item"><span class="timeline-date">2025</span><div><h3>Realta Fusion</h3><p>Theory intern working on neutral-beam injection simulation</p></div></article>
-          <article class="timeline-item"><span class="timeline-date">2023–2025</span><div><h3>MIT · SLAC · Imperial</h3><p>Research in fusion diagnostics, collider physics, and laser–plasma experiments</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="software">
-      <div class="section-head">
-        <div><p class="kicker">Scientific software</p><h2>Tools built to explore</h2></div>
-        <p class="section-lede">Open, reproducible code for simulation, inference, and learning—built in Python and increasingly with differentiable JAX workflows.</p>
-      </div>
-      <div class="software-grid">
-        <article class="software-card"><div class="software-mark">P</div><h3>PRISMS</h3><p>Parameter Recovery Inference from Synthetic MARS Spectra: a differentiable framework for spectrum generation and inference.</p><a href="https://github.com/cooluser26" target="_blank" rel="noreferrer">View GitHub profile ↗</a></article>
-        <article class="software-card"><div class="software-mark">J</div><h3>Differentiable projectile motion</h3><p>A compact JAX project demonstrating simulation, automatic differentiation, and gradient-based parameter recovery.</p><a href="https://github.com/cooluser26/differentiable_projectile_motion" target="_blank" rel="noreferrer">View repository ↗</a></article>
-        <article class="software-card"><div class="software-mark">D</div><h3>JAX diocotron simulation</h3><p>A particle-in-cell study of diocotron instability, developed as a visual and computational plasma-physics project.</p><a href="https://github.com/cooluser26" target="_blank" rel="noreferrer">More projects ↗</a></article>
-      </div>
-    </section>
-
-    <section class="section about" id="about">
-      <figure class="about-photo"><img src="assets/images/img2.png" alt="William Nguyen with research colleagues"></figure>
-      <div class="about-copy">
-        <p class="kicker">About</p>
-        <p class="large-copy">I am interested in using simulation and inference to understand extreme physical systems—and in making those tools clear, reproducible, and useful.</p>
-        <p>I completed an integrated MSci in Physics at Imperial College London, including an exchange year at MIT. My research has taken me from laser–plasma experiments and accelerator physics to fusion diagnostics and neutral-beam injection.</p>
-        <p>Outside research, I enjoy anime and cooking Vietnamese dishes that connect me to my childhood in Ho Chi Minh City.</p>
-        <div class="link-row"><a class="text-link" href="https://scholar.google.com/citations?user=113hVE8AAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a><a class="text-link" href="https://github.com/cooluser26" target="_blank" rel="noreferrer">GitHub</a><a class="text-link" href="https://www.linkedin.com/in/william-bao-nguyen/" target="_blank" rel="noreferrer">LinkedIn</a></div>
-      </div>
-    </section>
-
-    <section class="section" id="notes">
-      <div class="section-head">
-        <div><p class="kicker">Field notes</p><h2>Conferences &amp; milestones</h2></div>
-        <p class="section-lede">Short reflections from presenting research and meeting the broader plasma and accelerator communities.</p>
-      </div>
-      <div class="notes-list">
-        <article class="note"><img src="assets/images/blog-dpp-poster.png" alt="APS DPP poster session"><div><time datetime="2024-10-11">October 2024</time><h3>My first APS DPP experience</h3></div></article>
-        <article class="note"><img src="assets/images/blog-ipac-poster.png" alt="IPAC 2024 poster presentation"><div><time datetime="2024-05-26">May 2024</time><h3>Presenting at IPAC ’24 in Nashville</h3></div></article>
-      </div>
+    <section class="home-hero"><div class="hero-overlay"></div><div class="hero-content shell">
+      <p class="eyebrow light">Plasma physics · Fusion energy · Scientific computing</p>
+      <h1>William (Bao)<br>Nguyen</h1>
+      <p class="hero-bio">I develop computational tools and simulations for plasma physics, fusion experiments, and particle-beam systems. I am beginning my PhD in Mechanical Engineering at Stanford University in Fall 2026.</p>
+      <div class="button-row"><a class="button light" href="about/">About me</a><a class="button light" href="research/">My research</a></div>
+    </div></section>
+    <section class="home-cards shell" aria-label="Highlights">
+      <article class="home-card"><img src="assets/images/img1.png" alt="William presenting research"><h2>Curious researcher</h2><p>Exploring plasma physics through simulation, experiment, and inference.</p></article>
+      <article class="home-card"><img src="assets/images/img2.png" alt="William with research colleagues"><h2>Collaborative scientist</h2><p>Working across universities, national laboratories, and fusion companies.</p></article>
+      <article class="home-card"><img src="assets/images/img3.png" alt="William at an academic event"><h2>Dedicated student</h2><p>Beginning doctoral study at Stanford University in Fall 2026.</p></article>
     </section>
   </main>
-
-  <footer>
-    <div class="footer-inner"><p>© <span id="year"></span> William Bao Nguyen</p><div class="footer-links"><a href="#top">Back to top ↑</a></div></div>
-  </footer>
-
-  <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => {
-      const open = links.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-    });
-    links.addEventListener('click', event => {
-      if (event.target.closest('a')) {
-        links.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+  <footer><div class="shell footer-inner"><span>© <span data-year></span> William (Bao) Nguyen</span><div><a href="https://scholar.google.com/citations?user=113hVE8AAAAJ&hl=en">Google Scholar</a><a href="https://github.com/cooluser26">GitHub</a><a href="https://www.linkedin.com/in/william-bao-nguyen/">LinkedIn</a></div></div></footer>
+</body></html>
